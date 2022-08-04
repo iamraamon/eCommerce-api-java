@@ -3,14 +3,18 @@ package com.shop.registration.encyrpt;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
-public class WebSecurityConfiguration {
+public class WebSecurityConfiguration  {
 
-    private static final String[] WHITE_LIST_URLS = {"/register","verifyRegistration","/resendVerifyRegistration"};
+
+
+
+    private static final String[] WHITE_LIST_URLS = {"/register","verifyRegistration","/resendVerifyRegistration","/swagger-ui/**"};
 
     @Bean
     public PasswordEncoder passwordEncoder(){
